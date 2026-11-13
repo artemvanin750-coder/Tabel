@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учет посещаемости ТЭСИС-26 (сентябрь 2026)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Журнал учета посещаемости</h1>
+            <p>Группа: <strong>ТЭСИС-26</strong> | Специальность: 09.02.12 | Куратор: Жирнова Юлия Витальевна</p>
+            <p>Месяц: <strong>Сентябрь 2026</strong></p>
+        </header>
+
+        <div class="controls">
+            <div class="filter-group">
+                <label>Статус студента:</label>
+                <select id="statusFilter">
+                    <option value="all">Все</option>
+                    <option value="active">Активные</option>
+                    <option value="enrolled">Зачислен в сентябре</option>
+                    <option value="expelled">Отчислен</option>
+                    <option value="transferred">Переведен</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Метка:</label>
+                <select id="tagFilter">
+                    <option value="all">Все</option>
+                    <option value="svo">Член семьи участника СВО</option>
+                    <option value="none">Без метки</option>
+                </select>
+            </div>
+            <button id="saveBtn">Сохранить изменения</button>
+            <button id="exportBtn">Экспорт в JSON</button>
+        </div>
+
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>ФИО студента</th>
+                    <th>Статус</th>
+                    <th>Метка</th>
+                    <!-- Даты занятий -->
+                    <th>1</th><th>2</th><th>3</th><th>4</th><th>7</th><th>8</th><th>9</th><th>10</th>
+                    <th>11</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>21</th>
+                    <th>22</th><th>23</th><th>24</th><th>25</th><th>28</th><th>29</th><th>30</th>
+                    <th>Больн.</th>
+                    <th>Всего</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Строки генерируются скриптом -->
+            </tbody>
+        </table>
+
+        <div class="legend">
+            <strong>Обозначения:</strong>
+            <span class="mark present">п</span> - присутствовал
+            <span class="mark absent">н</span> - отсутствовал (н/я)
+            <span class="mark sick">б</span> - больничный
+            <span class="mark practice">п</span> - практика
+            <span class="mark enrolled">х</span> - зачислен (не было занятий)
+            <span class="mark expelled">—</span> - отчислен/переведен
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
